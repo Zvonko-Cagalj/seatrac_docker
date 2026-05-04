@@ -1,0 +1,13 @@
+services:
+  marus_ros2:
+    build: .
+    container_name: marus_ros2_humble
+    network_mode: host
+    stdin_open: true
+    tty: true
+    privileged: true
+    volumes:
+      - ./workspace:/ws
+      - /dev:/dev
+    environment:
+      - ROS_DOMAIN_ID=0
